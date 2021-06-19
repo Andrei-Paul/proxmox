@@ -6,7 +6,7 @@ After modifications to /etc/default/grub and /etc/modprobe.d/passthrough.conf, r
 update-initramfs -u -k all
 ```
 
-**Personal Initial Instalation**
+## Personal Initial Instalation ##
 ```
 -> Options
   -> Filesystem
@@ -50,4 +50,24 @@ update-initramfs -u -k all
   [REDACTED]
 -> DNS Server:
   [REDACTED]
+```
+
+### Disable Enterprise Repository
+```bash
+mv /etc/apt/sources.list.d/pve-enterprise.list /etc/apt/sources.list.d/pve-enterprise.list.disabled
+```
+
+### Enable No Subscription Repository
+```bash
+echo 'deb http://download.proxmox.com/debian/pve buster pve-no-subscription' > /etc/apt/sources.list.d/pve-no-subscription.list
+```
+
+### Enable Ceph Repository
+```bash
+echo 'deb http://download.proxmox.com/debian/ceph-octopus buster main' > /etc/apt/sources.list.d/ceph.list
+```
+
+### Disable Subscription Nag Screen
+```bash
+sed -i.backup -z "s/res === null || res === undefined || \!res || res\n\t\t\t.data.status.toLowerCase() \!== 'active'/false/g" /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js && systemctl restart pveproxy.service
 ```
