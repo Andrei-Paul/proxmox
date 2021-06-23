@@ -15,7 +15,7 @@
     -> Hardware Checksum Offloading: ☑ Disable hardware checksum offload
 ```
 
-#### System / General Setup
+### System / General Setup
 ```
 -> DNS Server Settings
     -> DNS Server Override: ☐ Allow DNS server list to be overridden by DHCP/PPP on WAN
@@ -30,9 +30,9 @@
 ```
 -> Available Packages
     -> Packages
-        -> acme: +Install
-        -> nmap: +Install
-        -> openvpn-client-export: +Install
-        -> qemu-guest-agent: +Install [ ≥ 2.6.? ONLY ]
-        -> sudo: +Install
+        -> acme: ➕ Install
+        -> nmap: ➕ Install
+        -> openvpn-client-export: ➕ Install
+        -> qemu-guest-agent: ➕ Install [ ≥ 2.6.? ONLY ]
+        -> sudo: ➕ Install
 ```
