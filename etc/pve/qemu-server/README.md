@@ -15,6 +15,17 @@
     -> Hardware Checksum Offloading: ☑ Disable hardware checksum offload
 ```
 
+#### System / General Setup
+```
+-> DNS Server Settings
+    -> DNS Server Override: ☐ Allow DNS server list to be overridden by DHCP/PPP on WAN
+-> webConfigurator
+    -> Top Navigation: Fixed (Remains visible at top of page)
+-> Associated Panels Show/Hide
+    -> ☑ Available Widgets
+       Show the Available Widgets panel on the Dashboard.
+```
+
 ### System / Package Manager / Available Packages
 ```
 -> Available Packages
