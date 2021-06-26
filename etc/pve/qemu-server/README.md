@@ -49,6 +49,33 @@ yes | pkg install nano
 -> Write Certificates: ☑ Write ACME certificates to /conf/acme/ in various formats for use by other scripts or daemons which do not integrate with the certificate manager.
 ```
 
+### Services / Acme / Certificates
+[ https://github.com/Andrei-Paul/proxmox/tree/main/etc/pve/qemu-server#services--acme-accountkeys ]
+```
+-> ➕ Add
+    -> Edit Certificate options
+        -> Name: pfsense.[REDACTED]
+        -> Description: [REDACTED]
+        -> Status: Active
+        -> Acme Account: [REDACTED]
+        -> Private Key: 4096-bit RSA
+        -> Domain SAN list
+            -> Table
+                -> Mode: Enabled
+                -> Domainname: pfsense.[REDACTED]
+                -> Method: DNS-GoDaddy
+                    -> Key: [REDACTED]
+                    -> Secret: [REDACTED]
+                    -> Enable DNS alias mode: pfsense.[REDACTED]
+        -> Actions list
+            -> ➕ Add
+                -> Table
+                    -> Mode: Enabled
+                    -> Command: /etc/rc.restart_webgui
+                    -> Method: Shell Command
+    -> 💾 Save
+```
+
 ### Services / Acme/ Accountkeys
 ```
 -> ➕ Add
