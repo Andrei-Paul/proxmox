@@ -56,7 +56,7 @@ yes | pkg install nano
 ```
 
 ### Services / Acme / Certificates
-[ https://github.com/Andrei-Paul/proxmox/tree/main/etc/pve/qemu-server#services--acme-accountkeys ]
+[ https://github.com/Andrei-Paul/proxmox/tree/main/etc/pve/qemu-server#services--acme--accountkeys ]
 ```
 -> ➕ Add
     -> Edit Certificate options
@@ -82,7 +82,7 @@ yes | pkg install nano
     -> 💾 Save
 ```
 
-### Services / Acme/ Accountkeys
+### Services / Acme / Accountkeys
 ```
 -> ➕ Add
     -> Edit Certificate options
