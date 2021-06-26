@@ -9,7 +9,7 @@ yes | pkg install nano
 ## Configuration via Web Configurator
 
 ### System / Advanced / Admin Access
-[ https://github.com/Andrei-Paul/proxmox/tree/main/etc/pve/qemu-server#services--acme--certificates ]
+[Required: [ Services / Acme / Certificates ]](#services--acme--certificates)
 ```
 -> webConfigurator
     -> SSL/TLS Certificate: pfsense.[REDACTED]
@@ -21,7 +21,7 @@ yes | pkg install nano
 ```
 
 ### System / Advanced / Networking
-[ https://docs.netgate.com/pfsense/en/latest/recipes/virtualize-proxmox-ve.html#disable-hardware-checksums-with-proxmox-ve-virtio ]
+[Reason: [ When using VirtIO interfaces in Proxmox VE, hardware checksums must be disabled ]](https://docs.netgate.com/pfsense/en/latest/recipes/virtualize-proxmox-ve.html#disable-hardware-checksums-with-proxmox-ve-virtio)
 ```
 -> Network Interfaces
     -> Hardware Checksum Offloading: ☑ Disable hardware checksum offload
@@ -56,7 +56,7 @@ yes | pkg install nano
 ```
 
 ### Services / Acme / Certificates
-[ https://github.com/Andrei-Paul/proxmox/tree/main/etc/pve/qemu-server#services--acme--accountkeys ]
+[Required: [ Services / Acme / Accountkeys ]](#services--acme--accountkeys)
 ```
 -> ➕ Add
     -> Edit Certificate options
