@@ -1,6 +1,12 @@
 # pfSense [ 20001.conf ]
 
-## Configuration
+## Configuration via SSH
+```
+yes | pkg update
+yes | pkg install nano
+```
+
+## Configuration via Web Configurator
 
 ### System / Advanced / Admin Access
 ```
