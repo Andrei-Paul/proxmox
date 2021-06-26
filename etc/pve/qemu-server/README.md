@@ -9,6 +9,12 @@ yes | pkg install nano
 ## Configuration via Web Configurator
 
 ### System / Advanced / Admin Access
+[ https://github.com/Andrei-Paul/proxmox/tree/main/etc/pve/qemu-server#services--acme--certificates ]
+```
+-> webConfigurator
+    -> SSL/TLS Certificate: pfsense.[REDACTED]
+```
+---
 ```
 -> Secure Shell
     -> Secure Shell Server: ☑ Enable Secure Shell
