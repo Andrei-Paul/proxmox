@@ -94,6 +94,18 @@ yes | pkg install nano
     -> 💾 Save
 ```
 
+### Services / Auto Configuration Backup / Settings
+```
+-> Auto Config Backup
+    -> Enable ACB: ☑ Enable automatic configuration backups
+    -> Encryption Password
+        -> [REDACTED]
+        -> [REDACTED]
+           Confirm
+    -> Hint/Identifier: pfsense.[REDACTED]
+-> 💾 Save
+```
+
 ### Services / DHCP Server / LAN
 ```
 -> General Options
