@@ -64,6 +64,36 @@ yes | pkg install nano
     -> Default gateway IPv4: WAN_DHCP
 ```
 
+### System / User Manager / Groups
+[Reason: [ The same (LDAP) groups must exist locally ]](https://docs.netgate.com/pfsense/en/latest/usermanager/ldap.html#ldap-groups)
+```
+-> Groups
+    -> ➕ Add
+        -> Group Properties
+            -> Group name: administrator
+            -> Scope: Remote
+            -> Description: Administrator Service
+        -> Assigned Privileges
+            -> ➕ Add
+                -> Group Privileges
+                    -> Assigned privileges: WebCfg - All pages
+                -> 💾 Save
+        -> 💾 Save
+    -> ➕ Add
+        -> Group Properties
+            -> Group name: vpn
+            -> Scope: Remote
+            -> Description: VPN Service
+        -> 💾 Save
+```
+
+### System / User Manager / Settings
+[Required: [ System / User Manager / Authentication Servers ]](#system--user-manager--authentication-servers)
+```
+-> Authentication Server: ldap.[REDACTED]
+-> Auth Refresh Time: 3600
+```
+
 ### System / User Manager / Authentication Servers
 ```
 -> ➕ Add
