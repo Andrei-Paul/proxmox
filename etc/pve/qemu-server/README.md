@@ -93,3 +93,41 @@ yes | pkg install nano
         -> Account key: [REDACTED]
     -> 💾 Save
 ```
+
+### Services / DHCP Server / LAN
+```
+-> General Options
+    -> Range
+        -> [REDACTED].20
+           From
+        -> [REDACTED].99
+           To
+-> Other Options
+    -> Network Booting: ⚙ Display Advanced
+        -> Enabled: ☑ Enables network booting
+        -> Next Server: [REDACTED].1
+        -> Default BIOS file name: undionly-to-matchbox.kpxe
+-> DHCP Static Mappings for this Interface    
+    -> ➕ Add
+        -> Static DHCP Mapping on LAN
+            -> MAC Address: 62:37:9F:80:F7:17
+            -> IP Address: [REDACTED].1
+            -> Hostname: pfsense
+            -> Description: pfsense LAN Interface
+            -> ARP Table Static Entry: ☑ Create an ARP Table Static Entry for this MAC & IP Address pair.
+            -> Domain name: [REDACTED]
+        -> 💾 Save
+```
+#### Repeat:
+```
+-> DHCP Static Mappings for this Interface 
+    -> ➕ Add
+        -> Static DHCP Mapping on LAN
+            -> MAC Address: [REDACTED]
+            -> IP Address: [REDACTED].10[REDACTED]
+            -> Hostname: [REDACTED]
+            -> Description: [REDACTED] LAN Interface
+            -> ARP Table Static Entry: ☑ Create an ARP Table Static Entry for this MAC & IP Address pair.
+            -> Domain name: [REDACTED]
+        -> 💾 Save
+```
