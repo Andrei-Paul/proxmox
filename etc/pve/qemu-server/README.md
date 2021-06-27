@@ -64,6 +64,34 @@ yes | pkg install nano
     -> Default gateway IPv4: WAN_DHCP
 ```
 
+### System / User Manager / Authentication Servers
+```
+-> ➕ Add
+    -> Server Settings
+        -> Descriptive name: ldap.[REDACTED]
+        -> Type: LDAP
+    -> LDAP Server Settings
+        -> Hostname or IP address: ldap.[REDACTED]
+           NOTE: When using SSL/TLS or STARTTLS, this hostname MUST match a Subject Alternative Name (SAN) or the Common Name (CN) of the LDAP server SSL/TLS Certificate.
+        -> Port value: 636
+        -> Transport: SSL/TLS Encrypted
+        -> Peer Certificate Authority: Global Root CA List
+           This CA is used to validate the LDAP server certificate when 'SSL/TLS Encrypted' or 'STARTTLS Encrypted' Transport is active. This CA must match the CA used by the LDAP server.
+        -> Search scope
+            -> Level: Entire Subtree
+            -> Base: dc=services,[REDACTED]
+        -> Authentication containers: dc=people,[REDACTED]
+           Note: Semi-Colon separated. This will be prepended to the search base dn above or the full container path can be specified containing a dc= component.
+Example: CN=Users;DC=example,DC=com or OU=Staff;OU=Freelancers
+        -> Bind anonymous: ☐ Use anonymous binds to resolve distinguished names
+        -> Bind credentials
+            -> cn=[REDACTED],[REDACTED]
+                -> [REDACTED]
+        -> Group member attribute: memberOf
+        -> Group Object Class: groupOfNames
+        -> Allow unauthenticated bind: ☐ Allow unauthenticated bind
+```
+
 ### Services / Acme / Settings
 ```
 -> Cron Entry: ☑ Enable Acme client renewal job. This will configure cron to renew certificates once a day at 3:16. Keeping track of the last successful renewal and the number of days set after to renew again. When renewal happens a service can be restarted or a shell script run to load the new certificate for services that need it, if needed this needs to be configured as a action under the certificate settings.
