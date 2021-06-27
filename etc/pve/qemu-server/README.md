@@ -30,6 +30,15 @@ yes | pkg install nano
 ### System / General Setup
 ```
 -> DNS Server Settings
+    -> DNS Servers
+        -> 1.1.1.1
+            -> one.one.one.one
+        -> 8.8.4.4
+           Address
+           Enter IP addresses to be used by the system for DNS resolution. These are also used for the DHCP service, DNS Forwarder and DNS Resolver when it has DNS Query Forwarding enabled.
+            -> dns.google
+               Hostname
+               Enter the DNS Server Hostname for TLS Verification in the DNS Resolver (optional).
     -> DNS Server Override: ☐ Allow DNS server list to be overridden by DHCP/PPP on WAN
 -> webConfigurator
     -> Top Navigation: Fixed (Remains visible at top of page)
