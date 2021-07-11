@@ -129,6 +129,27 @@ Example: CN=Users;DC=example,DC=com or OU=Staff;OU=Freelancers
         -> Allow unauthenticated bind: ☐ Allow unauthenticated bind
 ```
 
+### Firewall / NAT / Port Forward
+```
+-> Rules
+    -> ⮯ Add
+        -> Edit Redirect Entry
+            ->  Protocol: TCP/UDP
+            -> Destination port range
+                -> DNS
+                   From port
+                -> DNS
+                   To port
+            -> Redirect target IP
+                -> [REDACTED].10[REDACTED]
+                   Address
+            -> Redirect target port
+                -> DNS
+                   Port
+            -> Description: DNS Port Forward to Cluster
+        -> 💾 Save
+```
+    
 ### Firewall / NAT / Outbound
 [Reason: [ OpenVPN ]](#)
 ```
