@@ -20,6 +20,13 @@ yes | pkg install nano
     -> Secure Shell Server: ☑ Enable Secure Shell
 ```
 
+### System / Advanced / Firewall & NAT
+```
+-> Bogon Networks
+    -> Update Frequency: Weekly
+       The frequency of updating the lists of IP addresses that are reserved (but not RFC 1918) or not yet assigned by IANA.
+```
+
 ### System / Advanced / Networking
 [Reason: [ When using VirtIO interfaces in Proxmox VE, hardware checksums must be disabled ]](https://docs.netgate.com/pfsense/en/latest/recipes/virtualize-proxmox-ve.html#disable-hardware-checksums-with-proxmox-ve-virtio)
 ```
