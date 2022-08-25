@@ -70,19 +70,17 @@ echo 'deb http://download.proxmox.com/debian/ceph-octopus buster main' > /etc/ap
 ### Set [ Email from address ]
 ```
 -> Datacenter
-  -> [REDACTED]
-    -> Options
-      -> Email from address
-        [REDACTED]@[REDACTED]
+  -> Options
+    -> Email from address
+      [REDACTED]@[REDACTED]
 ```
 
 ### Set [ MAC address prefix ]
 ```
 -> Datacenter
-  -> [REDACTED]
-    -> Options
-      -> MAC address prefix
-        [ANY OF: x2:xx:xx: x6:xx:xx: xA:xx:xx: xE:xx:xx: ]
+  -> Options
+    -> MAC address prefix
+      [ANY OF: x2:xx:xx: x6:xx:xx: xA:xx:xx: xE:xx:xx: ]
 ```
 
 ### Disable Subscription Nag Screen
