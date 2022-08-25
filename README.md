@@ -67,6 +67,24 @@ echo 'deb http://download.proxmox.com/debian/pve buster pve-no-subscription' > /
 echo 'deb http://download.proxmox.com/debian/ceph-octopus buster main' > /etc/apt/sources.list.d/ceph.list
 ```
 
+### Set [ Email from address ]
+```
+-> Datacenter
+  -> [REDACTED]
+    -> Options
+      -> Email from address
+        [REDACTED]@[REDACTED]
+```
+
+### Set [ MAC address prefix ]
+```
+-> Datacenter
+  -> [REDACTED]
+    -> Options
+      -> MAC address prefix
+        [ANY OF: x2:xx:xx: x6:xx:xx: xA:xx:xx: xE:xx:xx: ]
+```
+
 ### Disable Subscription Nag Screen
 ```bash
 sed -i.backup -z "s/res === null || res === undefined || \!res || res\n\t\t\t.data.status.toLowerCase() \!== 'active'/false/g" /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js && systemctl restart pveproxy.service
