@@ -75,6 +75,31 @@ echo 'deb http://download.proxmox.com/debian/ceph-octopus buster main' > /etc/ap
       [REDACTED]@[REDACTED]
 ```
 
+#### Configure Google Mail relaying
+``` Bash
+# Based on https://www.naturalborncoder.com/linux/2023/05/19/setting-up-email-notifications-in-proxmox-using-gmail/
+apt update
+apt install libsasl2-modules mailutils
+
+# Setup Account
+echo "smtp.gmail.com [REDACTED]@[REDACTED]:[REDACTED]" > /etc/postfix/sasl_passwd # "Replace" with mail:password
+
+chmod 600 /etc/postfix/sasl_passwd
+postmap hash:/etc/postfix/sasl_passwd
+
+# Setup Headers Rewrite
+echo '/^From:.*/ REPLACE From: [REDACTED] <[REDACTED]@[REDACTED]>' > /etc/postfix/smtp_header_checks # "Replace" with hostname <mail>
+postmap hash:/etc/postfix/smtp_header_checks
+
+sed 's|relayhost =|#relayhost =\nrelayhost = smtp.gmail.com:587\nsmtp_use_tls = yes\nsmtp_sasl_auth_enable = yes\nsmtp_sasl_security_options =\nsmtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd\nsmtp_tls_CAfile = /etc/ssl/certs\nEntrust_Root_Certification_Authority.pem\nsmtp_tls_session_cache_database = btree:/var/lib/postfix/smtp_tls_session_cache\nsmtp_tls_session_cache_timeout = 3600s\nsmtp_header_checks = pcre:/etc/postfix/smtp_header_checks\n#|' -i /etc/postfix/main.cf
+
+# Reload configuration
+postfix reload
+
+# Test
+echo "Test email from Proxmox: $(hostname)" | /usr/bin/proxmox-mail-forward
+```
+
 ### Set [ MAC address prefix ]
 ```
 -> Datacenter
